@@ -10,7 +10,11 @@ resource "google_compute_instance" "vitual_machine" {
   }
 
   network_interface {
-    network = google_compute_network.private-network.id
+    subnetwork = "subnet1"
+
+    access_config {
+      
+    }
   }
 }
 
@@ -26,7 +30,11 @@ resource "google_compute_instance" "vitual-ubuntn" {
     }
 
     network_interface {
-      network = google_compute_instance.private-network.id
+      subnetwork = "subnet2"
+
+      access_config {
+        
+      }
     }
   
 }
